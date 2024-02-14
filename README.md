@@ -11,6 +11,60 @@ TODO
 
 TODO
 
+## Steps used to create this project
+
+- [x] Initialize workspace
+  ```
+  ng new comedy-connector --strict --create-application=false \                                                       ─╯
+     --new-project-root=libs \
+     --package-manager=pnpm
+  ```
+- [x] Enable strict template type checking
+  ```
+  npm install --save-dev json
+  npx json -I -f tsconfig.json -e "delete this.angularCompilerOptions.fullTemplateTypeCheck"
+  npx json -I -f tsconfig.json -e "this.angularCompilerOptions.strictTemplates = true"
+  ```
+
+
+
+---
+
+- [x] Task
+  ```
+  code
+  ```
+
+---
+
+- [x] Created an nx workspace:
+    ```
+    pnpx create-nx-workspace --name=comedy-connector \
+      --appName=frontend \
+      --preset=angular-monorepo \
+      --pm=pnpm \
+      --bundler=esbuild \
+      --style=scss \
+      --ssr=false \
+      --e2eTestRunner=playwright \
+      --nxCloud=skip
+    ```
+- [x] Setup Amplify CLI - [see docs](https://docs.amplify.aws/angular/start/getting-started/installation/#configure-the-amplify-cli)
+- [x] Add polyfill - [see docs](https://docs.amplify.aws/angular/start/project-setup/create-application/)
+- [x] Create libs
+  - nx generate @nx/angular:library appsync  --unitTestRunner=jest --style=scss --tags=shared --directory=libs/appsync
+- [ ] Create Amplify backend - steps adapted from this [nx angular amplify tutorial](https://dev.to/beavearony/getting-started-with-a-angularnx-workspace-backed-by-an-aws-amplify-graphql-api---part-1-24m0)
+  - Generate the angular library: `nx generate @nx/angular:library appsync`
+  -
+  - NOTE: the [amplify docs to create an app](https://docs.amplify.aws/angular/start/project-setup/create-application/) do not work with the nx setup
+- [x] Setup Amplify UI components - [see docs](https://ui.docs.amplify.aws/angular/getting-started/installation)
+- Setup additional Angular features from [Amplify Dev Center](https://docs.amplify.aws/angular/)
+  - [ ] Pre-built UI components
+  - [ ] Auth
+  - [ ] Serverless backend
+  - [ ] Storage
+  - [ ] GraphQL
+- [ ] [Setup CI](https://nx.dev/recipes/ci)
 
 ## Tech Stack
 
@@ -85,37 +139,6 @@ Just run `nx build comedy-connector` to build the application. The build artifac
 
 See [nx docs](https://nx.dev/getting-started/intro)
 
-## Steps used to create this project
-
-- [x] Created an nx workspace: 
-    ```
-    pnpx create-nx-workspace --name=comedy-connector \
-      --appName=frontend \
-      --preset=angular-monorepo \
-      --pm=pnpm \
-      --bundler=esbuild \
-      --style=scss \
-      --ssr=false \
-      --e2eTestRunner=playwright \
-      --nxCloud=skip
-    ```
-- [x] Setup Amplify CLI - [see docs](https://docs.amplify.aws/angular/start/getting-started/installation/#configure-the-amplify-cli)
-- [x] Add polyfill - [see docs](https://docs.amplify.aws/angular/start/project-setup/create-application/)
-- [x] Create libs
-  - nx generate @nx/angular:library appsync  --unitTestRunner=jest --style=scss --tags=shared --directory=libs/appsync
-- [ ] Create Amplify backend - steps adapted from this [nx angular amplify tutorial](https://dev.to/beavearony/getting-started-with-a-angularnx-workspace-backed-by-an-aws-amplify-graphql-api---part-1-24m0)
-  - Generate the angular library: `nx generate @nx/angular:library appsync`
-  - 
-  - NOTE: the [amplify docs to create an app](https://docs.amplify.aws/angular/start/project-setup/create-application/) do not work with the nx setup 
-- [x] Setup Amplify UI components - [see docs](https://ui.docs.amplify.aws/angular/getting-started/installation)
-- Setup additional Angular features from [Amplify Dev Center](https://docs.amplify.aws/angular/)
-  - [ ] Pre-built UI components
-  - [ ] Auth
-  - [ ] Serverless backend
-  - [ ] Storage
-  - [ ] GraphQL
-- [ ] [Setup CI](https://nx.dev/recipes/ci)
-
 ## Contributing
 
 Comedy Connector is an open-source project and we welcome contributions from the community.
@@ -127,6 +150,10 @@ If you'd like to contribute, please fork the repository and make changes as you'
 <a href="https://github.com/RainyMrGab/comedy-connector/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=RainyMrGab/comedy-connector" />
 </a>
+
+## Resources
+
+- [How to set up an Nx-style monorepo workspace with the Angular CLI](https://dev.to/this-is-angular/how-to-set-up-an-nx-style-monorepo-workspace-with-the-angular-cli-part-1-16b5)
 
 ## Inspiration
 
