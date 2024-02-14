@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "serve": "pnpm run start",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -23,6 +24,7 @@
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "^17.1.3",
     "@angular/cli": "^17.1.1",
     "@angular/compiler-cli": "^17.1.0",
     "@types/jasmine": "~5.1.0",

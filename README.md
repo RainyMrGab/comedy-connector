@@ -25,7 +25,16 @@ TODO
   npx json -I -f tsconfig.json -e "delete this.angularCompilerOptions.fullTemplateTypeCheck"
   npx json -I -f tsconfig.json -e "this.angularCompilerOptions.strictTemplates = true"
   ```
-
+- [x] Generate the frontend application
+  ```
+  ng generate application cc-frontend --prefix=cc \
+    --project-root=apps/frontend/cc-frontend \
+    --style=scss --routing=true
+  ```
+- [ ] Connect to Amplify
+  ```
+  code
+  ```
 
 
 ---
@@ -37,18 +46,15 @@ TODO
 
 ---
 
-- [x] Created an nx workspace:
-    ```
-    pnpx create-nx-workspace --name=comedy-connector \
-      --appName=frontend \
-      --preset=angular-monorepo \
-      --pm=pnpm \
-      --bundler=esbuild \
-      --style=scss \
-      --ssr=false \
-      --e2eTestRunner=playwright \
-      --nxCloud=skip
-    ```
+---
+
+- [x] Setup e2e tests with WebDriverIO
+  ```
+  ng e2e 
+  ```
+
+---
+
 - [x] Setup Amplify CLI - [see docs](https://docs.amplify.aws/angular/start/getting-started/installation/#configure-the-amplify-cli)
 - [x] Add polyfill - [see docs](https://docs.amplify.aws/angular/start/project-setup/create-application/)
 - [x] Create libs
