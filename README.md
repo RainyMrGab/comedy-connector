@@ -1,7 +1,7 @@
 # Comedy Connector
 
-Comedy Connector is the open-source project that allows a city's comedy community to connect, especially up-and-coming 
-talent. 
+Comedy Connector is the open-source project that allows a city's comedy community to connect, especially up-and-coming
+talent.
 
 ## Features
 
@@ -14,42 +14,62 @@ TODO
 ## Steps used to create this project
 
 - [x] Initialize workspace
-  ```
+
+  ```bash
   ng new comedy-connector --strict --create-application=false \                                                       ─╯
      --new-project-root=libs \
      --package-manager=pnpm
   ```
+
 - [x] Enable strict template type checking
-  ```
+
+  ```bash
   npm install --save-dev json
   npx json -I -f tsconfig.json -e "delete this.angularCompilerOptions.fullTemplateTypeCheck"
   npx json -I -f tsconfig.json -e "this.angularCompilerOptions.strictTemplates = true"
   ```
+
 - [x] Generate the frontend application
-  ```
+
+  ```bash
   ng generate application cc-frontend --prefix=cc \
     --project-root=apps/frontend/cc-frontend \
     --style=scss --routing=true
+  ng serve cc-frontend # verify
   ```
+
+- [x] Add lint
+
+  ```bash
+  ng lint cc-frontend
+  ```
+
 - [ ] Connect to Amplify
-  ```
+
+  ```bash
   code
   ```
 
+- [ ] Setup additional targets: lint and e2e testing
+
+  ```bash
+  ng lint cc-frontend
+  ng e2e cc-frontend
+  ```
 
 ---
 
 - [x] Task
-  ```
+
+  ```bash
   code
   ```
 
 ---
 
----
-
 - [x] Setup e2e tests with WebDriverIO
-  ```
+
+  ```bash
   ng e2e 
   ```
 
@@ -87,7 +107,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
    - Node.js
    - npm
-   - npm global installs: `npx` `@angular/cli` `pnpm` `nx` 
+   - npm global installs: `npx` `@angular/cli` `pnpm` `nx`
 
 2. Clone the repository
 
@@ -95,14 +115,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 4. Run the dev server: `pnpm run serve`  
 
-5. Visit [http://localhost:4200/](http://localhost:4200/) in your browser. The application will automatically reload 
+5. Visit [http://localhost:4200/](http://localhost:4200/) in your browser. The application will automatically reload
     if you change any of the source files.
 
 ## Development
 
 ### Start the app
 
-To start the development server run `pnpm run serve`. Open your browser and navigate to http://localhost:4200/
+To start the development server run `pnpm run serve`. Open your browser and navigate to <http://localhost:4200/>
 
 ### Running unit tests
 
@@ -114,16 +134,16 @@ To start the development server run `pnpm run serve`. Open your browser and navi
 
 ### Running tasks
 
-* To execute tasks with Nx use the following syntax: `nx <target> <project> <...options>`
-* You can also run multiple targets: `nx run-many -t <target1> <target2>`
-* ..or add `-p` to filter specific projects: `nx run-many -t <target1> <target2> -p <proj1> <proj2>`
-* Targets can be defined in the `package.json` or `projects.json`. Learn more [in the docs](https://nx.dev/features/run-tasks).
+- To execute tasks with Nx use the following syntax: `nx <target> <project> <...options>`
+- You can also run multiple targets: `nx run-many -t <target1> <target2>`
+- ..or add `-p` to filter specific projects: `nx run-many -t <target1> <target2> -p <proj1> <proj2>`
+- Targets can be defined in the `package.json` or `projects.json`. Learn more [in the docs](https://nx.dev/features/run-tasks).
 
 ### Affected changes
 
-* See what's been affected by changes: `nx affected:graph`
-* run tests for current changes: `nx affected:test`
-* run e2e tests for current changes: `nx affected:e2e`
+- See what's been affected by changes: `nx affected:graph`
+- run tests for current changes: `nx affected:test`
+- run e2e tests for current changes: `nx affected:e2e`
 
 ### Editor Integration
 
