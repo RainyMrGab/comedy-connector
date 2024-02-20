@@ -19,6 +19,9 @@ TODO
   ng new comedy-connector --strict --create-application=false \                                                       ─╯
      --new-project-root=libs \
      --package-manager=pnpm
+  pnpm install @schematics/angular@latest
+  ng add @schematics/angular
+  ng add @angular-eslint/schematics # add eslint schematics
   ```
 
 - [x] Update Angular version to latest
@@ -38,16 +41,29 @@ TODO
 - [x] Generate the frontend application
 
   ```bash
-  ng generate application cc-frontend --prefix=cc \
+  ng generate @angular-eslint/schematics:application cc-frontend --prefix=cc \
     --project-root=apps/frontend/cc-frontend \
     --style=scss --routing=true
   ng serve cc-frontend # verify
   ```
 
-- [x] Add lint
+- [ ] Generate library project for backend services
 
   ```bash
-  ng lint cc-frontend
+  ng generate library cc-services \
+    --project-root=libs/cc-services \
+    --prefix=services --entry-file=index \
+    --skip-install --skip-package-json
+  ng lint test cc-services # verify
+  
+  # delete build target, it will be built as part of cc-frontend
+  npx json -I -f angular.json -e "delete this.projects['cc-services'].architect.build"
+  
+  # set up lint options
+  # ng lint cc-services # no longer needed
+  ng config projects["cc-services"].architect.lint.options.exclude '["!libs/cc-services/**"]'
+  npx json -I -f libs/cc-services/tslint.json -e "this.linterOptions = { exclude: ['!**/*'] }"
+
   ```
 
 - [ ] Connect to Amplify

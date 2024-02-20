@@ -112,6 +112,48 @@
           }
         }
       }
+    },
+    "cc-services": {
+      "projectType": "library",
+      "root": "libs/cc-services",
+      "sourceRoot": "libs/cc-services/src",
+      "prefix": "services",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "libs/cc-services/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/cc-services/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/cc-services/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "libs/cc-services/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/cc-services/**/*.ts",
+              "libs/cc-services/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }
