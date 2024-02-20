@@ -21,6 +21,12 @@ TODO
      --package-manager=pnpm
   ```
 
+- [x] Update Angular version to latest
+
+  ```bash
+  ng update @angular/cli @angular/core
+  ```
+
 - [x] Enable strict template type checking
 
   ```bash
