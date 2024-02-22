@@ -47,25 +47,6 @@ TODO
   ng serve cc-frontend # verify
   ```
 
-- [ ] Generate library project for backend services
-
-  ```bash
-  ng generate library cc-services \
-    --project-root=libs/cc-services \
-    --prefix=services --entry-file=index \
-    --skip-install --skip-package-json
-  ng lint test cc-services # verify
-  
-  # delete build target, it will be built as part of cc-frontend
-  npx json -I -f angular.json -e "delete this.projects['cc-services'].architect.build"
-  
-  # set up lint options
-  # ng lint cc-services # no longer needed
-  ng config projects["cc-services"].architect.lint.options.exclude '["!libs/cc-services/**"]'
-  npx json -I -f libs/cc-services/tslint.json -e "this.linterOptions = { exclude: ['!**/*'] }"
-
-  ```
-
 - [ ] Connect to Amplify
 
   ```bash
