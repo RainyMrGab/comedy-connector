@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-comedyconnector-dev-143012-authRole",
+      "UnauthRoleArn": "arn:aws:iam::654654241879:role/amplify-comedyconnector-dev-143012-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::654654241879:role/amplify-comedyconnector-dev-143012-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-comedyconnector-dev-143012-deployment",
+      "UnauthRoleName": "amplify-comedyconnector-dev-143012-unauthRole",
+      "StackName": "amplify-comedyconnector-dev-143012",
+      "StackId": "arn:aws:cloudformation:us-east-2:654654241879:stack/amplify-comedyconnector-dev-143012/f7004bf0-d281-11ee-87fb-028dde73de7b",
+      "AmplifyAppId": "d316ff6gtie2s1"
+    }
+  }
+}

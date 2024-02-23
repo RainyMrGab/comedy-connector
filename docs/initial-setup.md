@@ -7,7 +7,7 @@ goal of this project.
 
 - [x] Initialize workspace
 
-  ```bash
+  ```shell
   ng new comedy-connector --strict --create-application=false \                                                       ─╯
      --new-project-root=libs \
      --package-manager=pnpm
@@ -18,13 +18,13 @@ goal of this project.
 
 - [x] Update Angular version to latest
 
-  ```bash
+  ```shell
   ng update @angular/cli @angular/core
   ```
 
 - [x] Enable strict template type checking
 
-  ```bash
+  ```shell
   npm install --save-dev json
   npx json -I -f tsconfig.json -e "delete this.angularCompilerOptions.fullTemplateTypeCheck"
   npx json -I -f tsconfig.json -e "this.angularCompilerOptions.strictTemplates = true"
@@ -32,31 +32,47 @@ goal of this project.
 
 - [x] Generate the frontend application
 
-  ```bash
+  ```shell
   ng generate @angular-eslint/schematics:application cc-frontend --prefix=cc \
     --project-root=apps/frontend/cc-frontend \
     --style=scss --routing=true
   ng serve cc-frontend # verify
   ```
 
-- [ ] Generate AWS GraphQL client code
+- [x] AWS Amplify init
 
-  ```bash
-  pnpm install aws-amplify --save-dev
-  # codegen TODO
+  ```shell
+  amplify init
+  ? Enter a name for the project (comedyconnector)
+  ? Initialize the project with the above configuration? No
+  ? Initialize the project with the above configuration? No
+  ? Enter a name for the environment dev
+  ? Choose your default editor: IntelliJ IDEA
+  ✔ Choose the type of app that you're building · javascript
+  Please tell us about your project
+  ? What javascript framework are you using angular
+  ? Source Directory Path:  apps/frontend/cc-frontend/src
+  ? Distribution Directory Path: dist/cc-frontend
+  ? Build Command:  npm run build
+  ? Start Command: npm run serve
+  Using default provider  awscloudformation
+  ? Select the authentication method you want to use: AWS profile
+  ? Please choose the profile you want to use ComedyConnector
   ```
+  
+  - [ ] Amplify setup
 
-- [ ] Connect to Amplify
+    - Install
+      ```shell
+      pnpm install aws-amplify
+      ```
+    - Follow [this guide](https://docs.amplify.aws/angular/start/getting-started/setup/#set-up-frontend)
+    - 
 
-  ```bash
-  pushd apps/frontend/cc-frontend
-   
-  popd
-  ```
 
 - [ ] Setup additional targets: lint and e2e testing
 
-  ```bash
+  ```shell
   ng lint cc-frontend
   ng e2e cc-frontend
   ```
@@ -65,7 +81,7 @@ goal of this project.
 
 - [x] Task
 
-  ```bash
+  ```shell
   code
   ```
 
@@ -73,7 +89,7 @@ goal of this project.
 
 - [x] Setup e2e tests with WebDriverIO
 
-  ```bash
+  ```shell
   ng e2e 
   ```
 

@@ -26,7 +26,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
    - Node.js
    - npm
-   - npm global installs: `npx` `@angular/cli` `pnpm` `nx`
+   - npm global installs: `npx` `@angular/cli` `pnpm` `nx` TODO
 
 2. Clone the repository
 
@@ -58,31 +58,13 @@ To start the development server run `pnpm run serve`. Open your browser and navi
 - ..or add `-p` to filter specific projects: `nx run-many -t <target1> <target2> -p <proj1> <proj2>`
 - Targets can be defined in the `package.json` or `projects.json`. Learn more [in the docs](https://nx.dev/features/run-tasks).
 
-### Affected changes
+## Amplify
 
-- See what's been affected by changes: `nx affected:graph`
-- run tests for current changes: `nx affected:test`
-- run e2e tests for current changes: `nx affected:e2e`
-
-### Editor Integration
-
-Have a look at the [Nx Console extensions](https://nx.dev/nx-console). It provides autocomplete support, a UI for exploring and running tasks & generators, and more! Available for VSCode, IntelliJ and comes with a LSP for Vim users.
-
-### Generate code
-
-If you happen to use Nx plugins, you can leverage code generators that might come with it.
-
-Run `nx list` to get a list of available plugins and whether they have generators. Then run `nx list <plugin-name>` to see what generators are available.
-
-Learn more about [Nx generators on the docs](https://nx.dev/features/generate-code).
-
-## Ready to deploy?
-
-Just run `nx build comedy-connector` to build the application. The build artifacts will be stored in the `dist/` directory, ready to be deployed.
-
-## Further help
-
-See [nx docs](https://nx.dev/getting-started/intro)
+`amplify status` will show you what you've added already and if it's locally configured or deployed
+`amplify add <category>` will allow you to add features like user login or a backend API
+`amplify push` will build all your local backend resources and provision it in the cloud
+`amplify console` to open the Amplify Console and view your project status
+`amplify publish` will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
 
 ## Contributing
 
@@ -90,7 +72,7 @@ Comedy Connector is an open-source project and we welcome contributions from the
 
 If you'd like to contribute, please fork the repository and make changes as you'd like. Pull requests are welcome.
 
-### Our Contributors ✨
+### Contributors ✨
 
 <a href="https://github.com/RainyMrGab/comedy-connector/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=RainyMrGab/comedy-connector" />
@@ -98,6 +80,7 @@ If you'd like to contribute, please fork the repository and make changes as you'
 
 ## Resources
 
+- TODO docs
 - [How to set up an Nx-style monorepo workspace with the Angular CLI](https://dev.to/this-is-angular/how-to-set-up-an-nx-style-monorepo-workspace-with-the-angular-cli-part-1-16b5)
 
 ## Inspiration
