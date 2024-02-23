@@ -21,7 +21,7 @@ TODO
      --package-manager=pnpm
   pnpm install @schematics/angular@latest
   ng add @schematics/angular
-  ng add @angular-eslint/schematics # add eslint schematics
+  ng add @angular-eslint/schematics                        # add eslint schematics
   ```
 
 - [x] Update Angular version to latest
@@ -46,11 +46,31 @@ TODO
     --style=scss --routing=true
   ng serve cc-frontend # verify
   ```
+  
+- [x] Generate the AWS AppSync GraphQL backend API with DynamoDB
+  - Navigate to the AWS AppSync Console
+  - Select `Create API`
+  - Choose `GraphQL APIs` and `Design from scratch`
+  - API Details:
+    - API name: `Comedy Connector AppSync API`
+  - Create a GraphQL type
+    - Choose `Create type backed by a DynamoDB table now`
+    - Model information: TODO image
+  - Drop schema.graphql in `apps/backend`
+
+- [ ] Generate backend application - MAY NOT BE NEEDED
+
+  ```bash
+  # generate project using serverless
+  mkdir apps/backend
+  cd apps/backend
+  npx serverless                                           # follow prompts to setup cc-backend
+  serverless invoke --function function1                   # test
+  ```
 
 - [ ] Connect to Amplify
 
   ```bash
-  code
   ```
 
 - [ ] Setup additional targets: lint and e2e testing
