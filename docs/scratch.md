@@ -1,6 +1,6 @@
 # Scratch
 
-WIP
+## WIP
 
 - [ ] Generate library project for backend services
 
@@ -32,3 +32,16 @@ WIP
   ```
 
 ---
+
+## Archive 
+
+- [ ] Generate the AWS AppSync GraphQL backend API with DynamoDB
+  - Navigate to the AWS AppSync Console
+  - Select `Create API`
+  - Choose `GraphQL APIs` and `Design from scratch`
+  - API Details:
+    - API name: `Comedy Connector AppSync API`
+  - Create a GraphQL type
+    - Choose `Create type backed by a DynamoDB table now`
+    - Model information: TODO image
+  - Drop schema.graphql in `apps/backend`
