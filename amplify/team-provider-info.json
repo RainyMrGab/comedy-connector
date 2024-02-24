@@ -10,6 +10,11 @@
       "StackName": "amplify-comedyconnector-dev-143012",
       "StackId": "arn:aws:cloudformation:us-east-2:654654241879:stack/amplify-comedyconnector-dev-143012/f7004bf0-d281-11ee-87fb-028dde73de7b",
       "AmplifyAppId": "d316ff6gtie2s1"
+    },
+    "categories": {
+      "api": {
+        "comedyconnector": {}
+      }
     }
   }
 }

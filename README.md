@@ -43,6 +43,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 To start the development server run `pnpm run serve`. Open your browser and navigate to <http://localhost:4200/>
 
+Notes:
+- `amplify mock api` mocks the API locally at http://10.0.0.9:20002/
+
 ### Running unit tests
 
 `nx test <app>` or to run all tests `pnpm run test`

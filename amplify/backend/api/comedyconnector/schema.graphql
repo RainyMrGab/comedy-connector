@@ -1,0 +1,39 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+
+# noinspection GraphQLUnresolvedReference,GraphQLMissingType,GraphQLEmptyType
+input AMPLIFY {
+  globalAuthRule: AuthRule = { allow: public }
+} # FOR TESTING ONLY!
+
+type Team @model {
+  id: ID! @primaryKey
+  city: String! @index
+  contact: UserOperation @hasOne
+  interests: [Interest]
+  name: String!
+  type: TeamType! @index
+  verification: UserOperation # put back @hasOne once it is getting generated
+}
+
+type UserOperation @model {
+  userId: String!
+  username: String
+  firstName: String
+  lastName: String
+  operation: Operation!
+  team: Team @belongsTo
+}
+
+enum TeamType {
+  PRACTICE, PERFORMANCE
+}
+
+enum Operation {
+  CREATE, VERIFY
+}
+
+enum Interest {
+  BOOKING, NEW_MEMBERS, NEW_COACH
+}
+

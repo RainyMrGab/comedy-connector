@@ -1,0 +1,15 @@
+projects:
+  comedyconnector:
+    schemaPath: amplify/backend/api/comedyconnector/build/schema.graphql
+    includes:
+      - apps/frontend/cc-frontend/src/graphql/**/*.graphql
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: angular
+        generatedFileName: apps/frontend/cc-frontend/src/app/API.service.ts
+        docsFilePath: apps/frontend/cc-frontend/src/graphql
+extensions:
+  amplify:
+    version: 3

@@ -1,0 +1,211 @@
+# this is an auto generated file. This will be overwritten
+
+mutation CreateTeam(
+  $input: CreateTeamInput!
+  $condition: ModelTeamConditionInput
+) {
+  createTeam(input: $input, condition: $condition) {
+    id
+    city
+    contact {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    interests
+    name
+    type
+    verification {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    createdAt
+    updatedAt
+    teamContactId
+    __typename
+  }
+}
+
+mutation UpdateTeam(
+  $input: UpdateTeamInput!
+  $condition: ModelTeamConditionInput
+) {
+  updateTeam(input: $input, condition: $condition) {
+    id
+    city
+    contact {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    interests
+    name
+    type
+    verification {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    createdAt
+    updatedAt
+    teamContactId
+    __typename
+  }
+}
+
+mutation DeleteTeam(
+  $input: DeleteTeamInput!
+  $condition: ModelTeamConditionInput
+) {
+  deleteTeam(input: $input, condition: $condition) {
+    id
+    city
+    contact {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    interests
+    name
+    type
+    verification {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    createdAt
+    updatedAt
+    teamContactId
+    __typename
+  }
+}
+
+mutation CreateUserOperation(
+  $input: CreateUserOperationInput!
+  $condition: ModelUserOperationConditionInput
+) {
+  createUserOperation(input: $input, condition: $condition) {
+    userId
+    username
+    firstName
+    lastName
+    operation
+    team {
+      id
+      city
+      interests
+      name
+      type
+      createdAt
+      updatedAt
+      teamContactId
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    userOperationTeamId
+    __typename
+  }
+}
+
+mutation UpdateUserOperation(
+  $input: UpdateUserOperationInput!
+  $condition: ModelUserOperationConditionInput
+) {
+  updateUserOperation(input: $input, condition: $condition) {
+    userId
+    username
+    firstName
+    lastName
+    operation
+    team {
+      id
+      city
+      interests
+      name
+      type
+      createdAt
+      updatedAt
+      teamContactId
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    userOperationTeamId
+    __typename
+  }
+}
+
+mutation DeleteUserOperation(
+  $input: DeleteUserOperationInput!
+  $condition: ModelUserOperationConditionInput
+) {
+  deleteUserOperation(input: $input, condition: $condition) {
+    userId
+    username
+    firstName
+    lastName
+    operation
+    team {
+      id
+      city
+      interests
+      name
+      type
+      createdAt
+      updatedAt
+      teamContactId
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    userOperationTeamId
+    __typename
+  }
+}

@@ -41,14 +41,14 @@ goal of this project.
 
 - [x] AWS Amplify init
 
-  ```shell
+  ```
   amplify init
   ? Enter a name for the project (comedyconnector)
   ? Initialize the project with the above configuration? No
   ? Initialize the project with the above configuration? No
   ? Enter a name for the environment dev
   ? Choose your default editor: IntelliJ IDEA
-  ✔ Choose the type of app that you're building · javascript
+  ✔ Choose the type of app that you're building · javascript[schema.graphql](..%2F..%2F..%2F..%2FDesktop%2Fschema.graphql)
   Please tell us about your project
   ? What javascript framework are you using angular
   ? Source Directory Path:  apps/frontend/cc-frontend/src
@@ -60,15 +60,53 @@ goal of this project.
   ? Please choose the profile you want to use ComedyConnector
   ```
   
-  - [ ] Amplify setup
+  - [x] Amplify setup
 
     - Install
       ```shell
       pnpm install aws-amplify
       ```
     - Follow [this guide](https://docs.amplify.aws/angular/start/getting-started/setup/#set-up-frontend)
-    - 
 
+- [x] Add GraphQL API
+
+  - Generate API
+  ```
+  amplify add api
+  ? Select from one of the below mentioned services: GraphQL
+  ? Here is the GraphQL API that we will create. Select a setting to edit or continue Authorization modes: API key (default, expiration time: 7 days from now)
+  ? Choose the default authorization type for the API API key
+  ✔ Enter a description for the API key: · Public
+  ✔ After how many days from now the API key should expire (1-365): · 7
+  ? Configure additional auth types? Yes
+  ? Choose the additional authorization types you want to configure for the API
+  ? Here is the GraphQL API that we will create. Select a setting to edit or continue Name: comedyconnector
+  ? Provide API name: comedyconnector
+  ? Here is the GraphQL API that we will create. Select a setting to edit or continue Continue
+  ? Choose a schema template: One-to-many relationship (e.g., “Blogs” with “Posts” and “Comments”)
+  ✔ Do you want to edit the schema now? (Y/n) · no
+  ```
+  
+  - Edit the file: [current schema](amplify/backend/api/comedyconnector/schema.graphql)
+  - Deploy: `amplify push`
+  ```
+  ✔ Are you sure you want to continue? (Y/n) · yes
+  ? Do you want to generate code for your newly created GraphQL API Yes
+  ? Choose the code generation language target angular
+  ? Enter the file name pattern of graphql queries, mutations and subscriptions apps/frontend/cc-frontend/src/graphql/**/*.graphql
+  ? Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions Yes
+  ? Enter maximum statement depth [increase from default if your schema is deeply nested] 2
+  ? Enter the file name for the generated code apps/frontend/cc-frontend/src/app/API.service.ts
+  ```
+  - Test with local mocking
+
+  ```shell
+  amplify mock api # test at http://10.0.0.9:20002/
+  ```
+  
+---
+
+- [ ] Create Angular lib for graphql services: I have notes on this below
 
 - [ ] Setup additional targets: lint and e2e testing
 

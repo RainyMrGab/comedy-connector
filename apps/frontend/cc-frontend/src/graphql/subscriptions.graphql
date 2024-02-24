@@ -1,0 +1,199 @@
+# this is an auto generated file. This will be overwritten
+
+subscription OnCreateTeam($filter: ModelSubscriptionTeamFilterInput) {
+  onCreateTeam(filter: $filter) {
+    id
+    city
+    contact {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    interests
+    name
+    type
+    verification {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    createdAt
+    updatedAt
+    teamContactId
+    __typename
+  }
+}
+
+subscription OnUpdateTeam($filter: ModelSubscriptionTeamFilterInput) {
+  onUpdateTeam(filter: $filter) {
+    id
+    city
+    contact {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    interests
+    name
+    type
+    verification {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    createdAt
+    updatedAt
+    teamContactId
+    __typename
+  }
+}
+
+subscription OnDeleteTeam($filter: ModelSubscriptionTeamFilterInput) {
+  onDeleteTeam(filter: $filter) {
+    id
+    city
+    contact {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    interests
+    name
+    type
+    verification {
+      userId
+      username
+      firstName
+      lastName
+      operation
+      id
+      createdAt
+      updatedAt
+      userOperationTeamId
+      __typename
+    }
+    createdAt
+    updatedAt
+    teamContactId
+    __typename
+  }
+}
+
+subscription OnCreateUserOperation(
+  $filter: ModelSubscriptionUserOperationFilterInput
+) {
+  onCreateUserOperation(filter: $filter) {
+    userId
+    username
+    firstName
+    lastName
+    operation
+    team {
+      id
+      city
+      interests
+      name
+      type
+      createdAt
+      updatedAt
+      teamContactId
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    userOperationTeamId
+    __typename
+  }
+}
+
+subscription OnUpdateUserOperation(
+  $filter: ModelSubscriptionUserOperationFilterInput
+) {
+  onUpdateUserOperation(filter: $filter) {
+    userId
+    username
+    firstName
+    lastName
+    operation
+    team {
+      id
+      city
+      interests
+      name
+      type
+      createdAt
+      updatedAt
+      teamContactId
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    userOperationTeamId
+    __typename
+  }
+}
+
+subscription OnDeleteUserOperation(
+  $filter: ModelSubscriptionUserOperationFilterInput
+) {
+  onDeleteUserOperation(filter: $filter) {
+    userId
+    username
+    firstName
+    lastName
+    operation
+    team {
+      id
+      city
+      interests
+      name
+      type
+      createdAt
+      updatedAt
+      teamContactId
+      __typename
+    }
+    id
+    createdAt
+    updatedAt
+    userOperationTeamId
+    __typename
+  }
+}
