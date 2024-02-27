@@ -35,7 +35,9 @@ goal of this project.
   ```shell
   ng generate @angular-eslint/schematics:application cc-frontend --prefix=cc \
     --project-root=apps/frontend/cc-frontend \
-    --style=scss --routing=true
+    --style=scss
+    --routing=true
+    --strict=true
   ng serve cc-frontend # verify
   ```
 
@@ -92,17 +94,27 @@ goal of this project.
   ```
   ✔ Are you sure you want to continue? (Y/n) · yes
   ? Do you want to generate code for your newly created GraphQL API Yes
-  ? Choose the code generation language target angular
-  ? Enter the file name pattern of graphql queries, mutations and subscriptions apps/frontend/cc-frontend/src/graphql/**/*.graphql
+  ? Choose the code generation language target typescript <--
+  ? Enter the file name pattern of graphql queries, mutations and subscriptions apps/frontend/cc-frontend/src/app/graphql/**/*.graphql
   ? Do you want to generate/update all possible GraphQL operations - queries, mutations and subscriptions Yes
   ? Enter maximum statement depth [increase from default if your schema is deeply nested] 2
-  ? Enter the file name for the generated code apps/frontend/cc-frontend/src/app/API.service.ts
+  ? Enter the file name for the generated code apps/frontend/cc-frontend/src/app/graphql/cc-graphql.service.ts
   ```
   - Test with local mocking
-
-  ```shell
-  amplify mock api # test at http://10.0.0.9:20002/
-  ```
+    - ```shell
+      amplify mock api # test at http://10.0.0.9:20002/
+      ```
+    - Test using some of these [GraphQL Queries](graphql-queries.md)
+    
+  - Connect the frontend to the API
+    - Generate the Team List component
+  
+      ```shell
+      ng generate component --standalone teamList --project cc-frontend
+      ```
+      
+    - Follow instructions to [connect frontend to the API](https://docs.amplify.aws/angular/start/getting-started/data-model/#connect-frontend-to-api)
+    - 
   
 ---
 

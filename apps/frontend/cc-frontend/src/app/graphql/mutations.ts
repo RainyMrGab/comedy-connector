@@ -1,6 +1,14 @@
-# this is an auto generated file. This will be overwritten
+/* tslint:disable */
+/* eslint-disable */
+// this is an auto generated file. This will be overwritten
 
-mutation CreateTeam(
+import * as APITypes from "./cc-graphql.service";
+type GeneratedMutation<InputType, OutputType> = string & {
+  __generatedMutationInput: InputType;
+  __generatedMutationOutput: OutputType;
+};
+
+export const createTeam = /* GraphQL */ `mutation CreateTeam(
   $input: CreateTeamInput!
   $condition: ModelTeamConditionInput
 ) {
@@ -40,8 +48,11 @@ mutation CreateTeam(
     __typename
   }
 }
-
-mutation UpdateTeam(
+` as GeneratedMutation<
+  APITypes.CreateTeamMutationVariables,
+  APITypes.CreateTeamMutation
+>;
+export const updateTeam = /* GraphQL */ `mutation UpdateTeam(
   $input: UpdateTeamInput!
   $condition: ModelTeamConditionInput
 ) {
@@ -81,8 +92,11 @@ mutation UpdateTeam(
     __typename
   }
 }
-
-mutation DeleteTeam(
+` as GeneratedMutation<
+  APITypes.UpdateTeamMutationVariables,
+  APITypes.UpdateTeamMutation
+>;
+export const deleteTeam = /* GraphQL */ `mutation DeleteTeam(
   $input: DeleteTeamInput!
   $condition: ModelTeamConditionInput
 ) {
@@ -122,8 +136,11 @@ mutation DeleteTeam(
     __typename
   }
 }
-
-mutation CreateUserOperation(
+` as GeneratedMutation<
+  APITypes.DeleteTeamMutationVariables,
+  APITypes.DeleteTeamMutation
+>;
+export const createUserOperation = /* GraphQL */ `mutation CreateUserOperation(
   $input: CreateUserOperationInput!
   $condition: ModelUserOperationConditionInput
 ) {
@@ -151,8 +168,11 @@ mutation CreateUserOperation(
     __typename
   }
 }
-
-mutation UpdateUserOperation(
+` as GeneratedMutation<
+  APITypes.CreateUserOperationMutationVariables,
+  APITypes.CreateUserOperationMutation
+>;
+export const updateUserOperation = /* GraphQL */ `mutation UpdateUserOperation(
   $input: UpdateUserOperationInput!
   $condition: ModelUserOperationConditionInput
 ) {
@@ -180,8 +200,11 @@ mutation UpdateUserOperation(
     __typename
   }
 }
-
-mutation DeleteUserOperation(
+` as GeneratedMutation<
+  APITypes.UpdateUserOperationMutationVariables,
+  APITypes.UpdateUserOperationMutation
+>;
+export const deleteUserOperation = /* GraphQL */ `mutation DeleteUserOperation(
   $input: DeleteUserOperationInput!
   $condition: ModelUserOperationConditionInput
 ) {
@@ -209,3 +232,7 @@ mutation DeleteUserOperation(
     __typename
   }
 }
+` as GeneratedMutation<
+  APITypes.DeleteUserOperationMutationVariables,
+  APITypes.DeleteUserOperationMutation
+>;

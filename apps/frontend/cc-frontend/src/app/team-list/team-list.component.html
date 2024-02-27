@@ -1,0 +1,25 @@
+<div class="form-body">
+  <form
+    autocomplete="off"
+    [formGroup]="createForm"
+    (ngSubmit)="onCreate(createForm.value)"
+  >
+    <div>
+      <label for="name">Name: </label>
+      <input id="name" type="text" formControlName="name" autocomplete="off"/>
+    </div>
+    <div>
+      <label for="type">Type: </label>
+      <select id="type" formControlName="type">
+        <option *ngFor="let type of types" [ngValue]="type">{{ type | titlecase }}</option>
+      </select>
+    </div>
+    <div>
+      <label for="interests">Interests: </label>
+      <select id="interests" formControlName="interests">
+        <option *ngFor="let interest of interests" [ngValue]="interest">{{ interest | titlecase }}</option>
+      </select>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>

@@ -1,6 +1,14 @@
-# this is an auto generated file. This will be overwritten
+/* tslint:disable */
+/* eslint-disable */
+// this is an auto generated file. This will be overwritten
 
-query GetTeam($id: ID!) {
+import * as APITypes from "./cc-graphql.service";
+type GeneratedQuery<InputType, OutputType> = string & {
+  __generatedQueryInput: InputType;
+  __generatedQueryOutput: OutputType;
+};
+
+export const getTeam = /* GraphQL */ `query GetTeam($id: ID!) {
   getTeam(id: $id) {
     id
     city
@@ -37,8 +45,8 @@ query GetTeam($id: ID!) {
     __typename
   }
 }
-
-query ListTeams(
+` as GeneratedQuery<APITypes.GetTeamQueryVariables, APITypes.GetTeamQuery>;
+export const listTeams = /* GraphQL */ `query ListTeams(
   $id: ID
   $filter: ModelTeamFilterInput
   $limit: Int
@@ -67,8 +75,8 @@ query ListTeams(
     __typename
   }
 }
-
-query GetUserOperation($id: ID!) {
+` as GeneratedQuery<APITypes.ListTeamsQueryVariables, APITypes.ListTeamsQuery>;
+export const getUserOperation = /* GraphQL */ `query GetUserOperation($id: ID!) {
   getUserOperation(id: $id) {
     userId
     username
@@ -93,8 +101,11 @@ query GetUserOperation($id: ID!) {
     __typename
   }
 }
-
-query ListUserOperations(
+` as GeneratedQuery<
+  APITypes.GetUserOperationQueryVariables,
+  APITypes.GetUserOperationQuery
+>;
+export const listUserOperations = /* GraphQL */ `query ListUserOperations(
   $filter: ModelUserOperationFilterInput
   $limit: Int
   $nextToken: String
@@ -116,8 +127,11 @@ query ListUserOperations(
     __typename
   }
 }
-
-query TeamsByCity(
+` as GeneratedQuery<
+  APITypes.ListUserOperationsQueryVariables,
+  APITypes.ListUserOperationsQuery
+>;
+export const teamsByCity = /* GraphQL */ `query TeamsByCity(
   $city: String!
   $sortDirection: ModelSortDirection
   $filter: ModelTeamFilterInput
@@ -146,8 +160,11 @@ query TeamsByCity(
     __typename
   }
 }
-
-query TeamsByType(
+` as GeneratedQuery<
+  APITypes.TeamsByCityQueryVariables,
+  APITypes.TeamsByCityQuery
+>;
+export const teamsByType = /* GraphQL */ `query TeamsByType(
   $type: TeamType!
   $sortDirection: ModelSortDirection
   $filter: ModelTeamFilterInput
@@ -176,3 +193,7 @@ query TeamsByType(
     __typename
   }
 }
+` as GeneratedQuery<
+  APITypes.TeamsByTypeQueryVariables,
+  APITypes.TeamsByTypeQuery
+>;

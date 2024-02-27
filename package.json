@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "serve": "pnpm run start",
+    "start": "pnpm run serve",
+    "serve": "conc \"amplify mock api\" \"ng serve cc-frontend\"",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -23,6 +23,7 @@
     "@angular/router": "^17.2.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "zen-observable-ts": "^1.1.0",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
@@ -38,6 +39,7 @@
     "@typescript-eslint/eslint-plugin": "6.19.0",
     "@typescript-eslint/parser": "6.19.0",
     "aws-amplify": "^6.0.17",
+    "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
     "jasmine-core": "~5.1.0",
     "json": "^11.0.0",
