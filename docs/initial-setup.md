@@ -55,8 +55,8 @@ goal of this project.
   ? What javascript framework are you using angular
   ? Source Directory Path:  apps/frontend/cc-frontend/src
   ? Distribution Directory Path: dist/cc-frontend
-  ? Build Command:  npm run build
-  ? Start Command: npm run serve
+  ? Build Command:  pnpm run build
+  ? Start Command: pnpm run serve
   Using default provider  awscloudformation
   ? Select the authentication method you want to use: AWS profile
   ? Please choose the profile you want to use ComedyConnector
@@ -64,15 +64,13 @@ goal of this project.
   
   - [x] Amplify setup
 
-    - Install
-      ```shell
-      pnpm install aws-amplify
-      ```
+    - Install: `pnpm install aws-amplify`
     - Follow [this guide](https://docs.amplify.aws/angular/start/getting-started/setup/#set-up-frontend)
 
 - [x] Add GraphQL API
 
   - Generate API
+  
   ```
   amplify add api
   ? Select from one of the below mentioned services: GraphQL
@@ -90,8 +88,10 @@ goal of this project.
   ```
   
   - Edit the file: [current schema](amplify/backend/api/comedyconnector/schema.graphql)
-  - Deploy: `amplify push`
+  - Deploy:
+
   ```
+  amplify push
   ✔ Are you sure you want to continue? (Y/n) · yes
   ? Do you want to generate code for your newly created GraphQL API Yes
   ? Choose the code generation language target typescript <--
@@ -100,21 +100,15 @@ goal of this project.
   ? Enter maximum statement depth [increase from default if your schema is deeply nested] 2
   ? Enter the file name for the generated code apps/frontend/cc-frontend/src/app/graphql/cc-graphql.service.ts
   ```
+
   - Test with local mocking
-    - ```shell
-      amplify mock api # test at http://10.0.0.9:20002/
-      ```
+
+    - `amplify mock api # test at http://10.0.0.9:20002/`
     - Test using some of these [GraphQL Queries](graphql-queries.md)
-    
-  - Connect the frontend to the API
-    - Generate the Team List component
-  
-      ```shell
-      ng generate component --standalone teamList --project cc-frontend
-      ```
-      
-    - Follow instructions to [connect frontend to the API](https://docs.amplify.aws/angular/start/getting-started/data-model/#connect-frontend-to-api)
-    - 
+
+- [ ] Connect the frontend to the API
+  - Generate the Team List component: `ng generate component --standalone teamList --project cc-frontend`
+  - Follow instructions to [connect frontend to the API](https://docs.amplify.aws/angular/start/getting-started/data-model/#connect-frontend-to-api)
   
 ---
 

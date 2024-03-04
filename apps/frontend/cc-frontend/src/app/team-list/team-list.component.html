@@ -23,3 +23,14 @@
     <button type="submit">Submit</button>
   </form>
 </div>
+<hr/>
+<div>
+  @for (team of teams; track team?.id) {
+  <div>{{ team?.name }}</div>
+  <div>{{ team?.type }}</div>
+  <div>{{ team?.interests }}</div>
+  <hr/>
+  } @empty {
+  <div>There are no teams.</div>
+  }
+</div>
