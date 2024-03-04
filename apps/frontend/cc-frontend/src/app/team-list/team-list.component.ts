@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {NgForOf, TitleCasePipe} from "@angular/common";
 import {
   FormBuilder,
@@ -10,7 +10,6 @@ import {generateClient, type Client} from 'aws-amplify/api';
 import {Team, TeamType, Interest} from '../graphql/cc-graphql.service'
 import * as queries from '../graphql/queries';
 import * as mutations from '../graphql/mutations'
-import * as subscriptions from '../graphql/subscriptions'
 
 const CITY_DEFAULT: string = "pittsburgh";
 const CREATE_DEFAULTS = {
@@ -25,7 +24,7 @@ const CREATE_DEFAULTS = {
   templateUrl: './team-list.component.html',
   styleUrl: './team-list.component.scss'
 })
-export class TeamListComponent implements OnInit, OnDestroy {
+export class TeamListComponent implements OnInit {
   public createForm: FormGroup;
   public client: Client;
   public types: string[];
@@ -52,6 +51,11 @@ export class TeamListComponent implements OnInit, OnDestroy {
    * Fetch teams when app loads
    */
   async ngOnInit() {
+    await this._fetchTeams();
+    // subscription does not seem to work
+  }
+
+  private async _fetchTeams() {
     try {
       const response = await this.client.graphql({
         query: queries.teamsByCity,
@@ -63,26 +67,6 @@ export class TeamListComponent implements OnInit, OnDestroy {
     } catch (e) {
       console.log('error fetching teams', e);
     }
-
-    /* subscribe to new todos being created */
-    this.subscription = this.client.graphql({
-      query: subscriptions.onCreateTeam
-    }).subscribe({
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      next: (event: any) => {
-        const newTeam = event.data.onCreateTeam;
-        if (this.teams) {
-          this.teams = [newTeam, ...this.teams];
-        }
-      }
-    });
-  }
-
-  ngOnDestroy() {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
-    this.subscription = null;
   }
 
   public async onCreate(team: Team) {
@@ -95,6 +79,7 @@ export class TeamListComponent implements OnInit, OnDestroy {
         }
       });
       console.log('team created!', response);
+      await this._fetchTeams();
       this.createForm.reset();
     } catch (e) {
       console.log('error creating team...', e);
