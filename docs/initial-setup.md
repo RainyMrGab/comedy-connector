@@ -106,10 +106,20 @@ goal of this project.
     - `amplify mock api # test at http://10.0.0.9:20002/`
     - Test using some of these [GraphQL Queries](graphql-queries.md)
 
-- [ ] Connect the frontend to the API
+- [x] Connect the frontend to the API
   - Generate the Team List component: `ng generate component --standalone teamList --project cc-frontend`
   - Follow instructions to [connect frontend to the API](https://docs.amplify.aws/angular/start/getting-started/data-model/#connect-frontend-to-api)
-  
+
+- [x] Add hosting
+
+  ```
+  ❯ amplify hosting add
+  ✔ Select the plugin module to execute · Hosting with Amplify Console (Managed hosting with custom domains, Continuous deployment)
+  ? Choose a type Manual deployment
+  ```
+
+- [x] Publish: `amplify publish`
+
 ---
 
 - [ ] Create Angular lib for graphql services: I have notes on this below
