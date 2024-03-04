@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/cc-frontend",
+            "outputPath": "dist/",
             "index": "apps/frontend/cc-frontend/src/index.html",
             "browser": "apps/frontend/cc-frontend/src/main.ts",
             "polyfills": [

@@ -9,7 +9,7 @@
     "framework": "angular",
     "config": {
       "SourceDir": "apps/frontend/cc-frontend/src",
-      "DistributionDir": "dist/cc-frontend",
+      "DistributionDir": "dist/browser",
       "BuildCommand": "pnpm run build",
       "StartCommand": "pnpm run serve"
     }
